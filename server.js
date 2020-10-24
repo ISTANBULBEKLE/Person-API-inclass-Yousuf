@@ -26,7 +26,7 @@ app.get('/people/getAll', (req, res) => {
     res.json(people);
 })
 
-// "getPersonById:Id" -> Returns the user with that distint Id
+// "getPersonById:Id" -> Returns the user with that distinct Id
 app.get('/people/getById/:Id', (req, res) => {
     const Id = req.params.Id // <- {Id:value}
 
@@ -35,7 +35,7 @@ app.get('/people/getById/:Id', (req, res) => {
     if (Person) { res.json(Person) } else { res.send("Person not found") }
 })
 
-// "getPersonByName:Name" -> Returns the user with that distint Name
+// "getPersonByName:Name" -> Returns the user with that distinct Name
 app.get('/people/getByName/:Name', (req, res) => {
     const { Name } = req.params // <- {Id:value}
 
@@ -56,8 +56,8 @@ app.post('/people/createPerson', (req, res) => {
 
 // "editName/:Id" -> Edits the name of a person associated with that Id 
 app.post('/people/editName/:Id', (req, res) => {
-    const { Id } = req.params
-    const value = req.body
+    const { Id } = req.params;
+    const value = req.body;
 
     people.forEach(e => {
         if (e.id == Id) {
